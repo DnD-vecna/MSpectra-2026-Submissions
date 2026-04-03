@@ -1,0 +1,11 @@
+{
+  "name": "voice_ai_agent",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}

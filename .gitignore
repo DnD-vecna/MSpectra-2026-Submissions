@@ -1,0 +1,17 @@
+# Ignore the virtual environment
+venv/
+
+# Ignore the node dependencies
+node_modules/
+
+# Ignore the AI models and the zip file
+vosk-model/
+vosk-model.zip
+
+# Ignore audio processing folders
+input/
+output/
+
+# Ignore Python caches
+__pycache__/
+*.pyc

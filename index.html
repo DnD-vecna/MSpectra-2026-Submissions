@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Voice Agent — Support Chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-dot"></div>
+        <span>VoiceAgent</span>
+      </div>
+
+      <div class="session-box">
+        <div class="session-label">Session</div>
+        <div class="session-id" id="sessionId">—</div>
+        <button class="btn-new" id="btnNewSession">New Session</button>
+      </div>
+
+      <div class="info-panel">
+        <div class="info-row">
+          <span class="info-key">Intent</span>
+          <span class="info-val" id="infoIntent">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Language</span>
+          <span class="info-val" id="infoLang">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Sentiment</span>
+          <span class="info-val" id="infoSentiment">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Status</span>
+          <span class="info-val" id="infoStatus">Active</span>
+        </div>
+      </div>
+
+      <div class="slots-panel">
+        <div class="slots-label">Collected Slots</div>
+        <div id="slotsDisplay" class="slots-empty">No slots yet</div>
+      </div>
+
+      <div class="hint-panel">
+        <div class="hint-title">Try saying</div>
+        <div class="hint" onclick="fillInput(this)">Where is my order 1001?</div>
+        <div class="hint" onclick="fillInput(this)">Mera order 1002 kahan hai?</div>
+        <div class="hint" onclick="fillInput(this)">I want to file a complaint</div>
+        <div class="hint" onclick="fillInput(this)">My item arrived damaged</div>
+      </div>
+    </aside>
+
+    <!-- Chat area -->
+    <main class="chat-area">
+      <div class="chat-header">
+        <div class="agent-avatar">A</div>
+        <div class="agent-info">
+          <div class="agent-name">Support Agent</div>
+          <div class="agent-status" id="agentStatus">
+            <span class="status-dot online"></span> Online
+          </div>
+        </div>
+        <div class="lang-badge" id="langBadge">EN</div>
+      </div>
+
+      <div class="messages" id="messages">
+        <div class="welcome-msg">
+          <div class="welcome-icon">◎</div>
+          <p>Hello! Welcome to customer support.<br/>How can I help you today?</p>
+        </div>
+      </div>
+
+      <div class="input-area">
+        <div class="escalation-banner" id="escalationBanner" style="display:none">
+          ⚠ Transferring to a human agent — please hold.
+        </div>
+        <div class="input-row">
+          <input
+            type="text"
+            id="userInput"
+            placeholder="Type your message..."
+            autocomplete="off"
+          />
+          <button class="send-btn" id="sendBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
